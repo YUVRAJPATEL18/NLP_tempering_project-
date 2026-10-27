@@ -1,0 +1,8 @@
+{
+ "probe": "field-matched crops, frozen ImageNet ResNet-18 + logistic regression, document score = max tile probability (256/192 tiling)",
+ "split": "val",
+ "n_train_crops": 3913,
+ "document_auc": 0.5883,
+ "within_image_pair_accuracy": 0.6706,
+ "n_within_pairs": 170
+}

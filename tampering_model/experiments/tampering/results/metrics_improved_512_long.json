@@ -1,0 +1,144 @@
+{
+ "model": "improved_512_long",
+ "checkpoint": "checkpoints/improved_512_long/best.pt",
+ "model_version": "sidtd-resnet18-improved_512_long-e11",
+ "device": "mps",
+ "temperature": 0.5,
+ "threshold": {
+  "tamper_high": 0.653,
+  "tamper_low": 0.4171,
+  "target_fpr": 0.02,
+  "selection_rule": "max_tpr_at_fpr<= 0.02",
+  "low_rule": "5th percentile of calibrated validation tampered probabilities",
+  "fitted_on": "validation"
+ },
+ "classification": {
+  "n": 333,
+  "n_genuine": 149,
+  "n_tampered": 184,
+  "threshold": 0.653,
+  "accuracy": 0.5976,
+  "precision": 0.9032,
+  "recall": 0.3043,
+  "f1": 0.4553,
+  "fpr": 0.0403,
+  "tn": 143,
+  "fp": 6,
+  "fn": 128,
+  "tp": 56,
+  "roc_auc": 0.8437
+ },
+ "timing": {
+  "n_timed": 50,
+  "device": "mps",
+  "mean_ms": 31.2,
+  "p50_ms": 29.7,
+  "p95_ms": 38.8,
+  "peak_rss_mb": 462368.0
+ },
+ "model_load_s": 0.91,
+ "task": "whole_image",
+ "per_manipulation_type": {
+  "Crop_and_Replace": {
+   "n": 22,
+   "detected": 5,
+   "recall": 0.2273
+  },
+  "Inpaint_and_Rewrite": {
+   "n": 162,
+   "detected": 51,
+   "recall": 0.3148
+  }
+ },
+ "groups": {
+  "A_genuine_good": {
+   "gate_on": {
+    "n": 93,
+    "fraud_flag_rate": 0.0215,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.4516,
+    "inconclusive_rate": 0.4516,
+    "cleared_rate": 0.5269,
+    "not_cleared_rate": 0.4731
+   },
+   "gate_off": {
+    "n": 93,
+    "fraud_flag_rate": 0.0215,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.0,
+    "inconclusive_rate": 0.0,
+    "cleared_rate": 0.9785,
+    "not_cleared_rate": 0.0215
+   }
+  },
+  "B_genuine_degraded": {
+   "gate_on": {
+    "n": 56,
+    "fraud_flag_rate": 0.0,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.625,
+    "inconclusive_rate": 0.625,
+    "cleared_rate": 0.375,
+    "not_cleared_rate": 0.625
+   },
+   "gate_off": {
+    "n": 56,
+    "fraud_flag_rate": 0.0714,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.0,
+    "inconclusive_rate": 0.0,
+    "cleared_rate": 0.9286,
+    "not_cleared_rate": 0.0714
+   }
+  },
+  "C_tampered_good": {
+   "gate_on": {
+    "n": 118,
+    "fraud_flag_rate": 0.2712,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.6695,
+    "inconclusive_rate": 0.6695,
+    "cleared_rate": 0.0593,
+    "not_cleared_rate": 0.9407
+   },
+   "gate_off": {
+    "n": 118,
+    "fraud_flag_rate": 0.2712,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.0,
+    "inconclusive_rate": 0.0,
+    "cleared_rate": 0.7288,
+    "not_cleared_rate": 0.2712
+   }
+  },
+  "D_tampered_degraded": {
+   "gate_on": {
+    "n": 66,
+    "fraud_flag_rate": 0.0,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.9697,
+    "inconclusive_rate": 0.9697,
+    "cleared_rate": 0.0303,
+    "not_cleared_rate": 0.9697
+   },
+   "gate_off": {
+    "n": 66,
+    "fraud_flag_rate": 0.3636,
+    "rescan_rate": 0.0,
+    "manual_review_rate": 0.0,
+    "inconclusive_rate": 0.0,
+    "cleared_rate": 0.6364,
+    "not_cleared_rate": 0.3636
+   }
+  }
+ },
+ "localization": {
+  "n_tampered_test": 184,
+  "n_with_derived_mask": 181,
+  "n_without_annotation": 3,
+  "cam_threshold": 0.5,
+  "iou_mean": 0.0077,
+  "dice_mean": 0.0146,
+  "note": "masks are DERIVED from official field annotations (src + tampered field); SIDTD provides no official pixel-level tampering masks"
+ }
+}

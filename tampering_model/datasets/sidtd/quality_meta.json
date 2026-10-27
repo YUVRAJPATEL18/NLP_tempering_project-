@@ -1,0 +1,9 @@
+{
+ "degraded_threshold": 0.8251,
+ "rule": "33rd percentile of train-split genuine quality_scores (pre-registered)",
+ "n_train_genuine": 698,
+ "quality_score_range": [
+  0.6372,
+  0.9923
+ ]
+}

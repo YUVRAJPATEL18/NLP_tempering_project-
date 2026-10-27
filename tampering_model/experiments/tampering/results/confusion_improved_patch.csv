@@ -1,0 +1,3 @@
+actual\predicted,genuine,tampered
+genuine,146,3
+tampered,180,4

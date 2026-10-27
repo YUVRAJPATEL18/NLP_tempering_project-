@@ -1,0 +1,9 @@
+{
+ "n_tampered_test": 184,
+ "n_with_derived_mask": 181,
+ "n_without_annotation": 3,
+ "tile_threshold": 0.5,
+ "iou_mean": 0.0122,
+ "dice_mean": 0.0238,
+ "note": "tile-resolution map (stride 192 px, probability threshold 0.50) vs masks DERIVED from official field annotations; SIDTD has no official pixel-level masks"
+}

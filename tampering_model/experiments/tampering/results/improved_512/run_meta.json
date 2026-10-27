@@ -1,0 +1,38 @@
+{
+ "run_name": "improved_512",
+ "seed": 42,
+ "device": "mps",
+ "batch_size": 4,
+ "epochs_run": 6,
+ "best_epoch": 6,
+ "train_seconds": 425.0,
+ "temperature": 0.5,
+ "tamper_high": 0.8069024085998535,
+ "tamper_low": 0.4000521287322044,
+ "split": {
+  "source": "existing",
+  "file": "datasets/sidtd/splits.json"
+ },
+ "pos_weight": 1.0,
+ "run_cfg": {
+  "run_name": "improved_512",
+  "image_size": 512,
+  "freeze_backbone": true,
+  "epochs": 6,
+  "batch_size": 4,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "augment": true,
+  "accum_steps": 1,
+  "early_stop_patience": 2
+ },
+ "model_cfg": {
+  "architecture": "resnet18",
+  "pretrained": true,
+  "dropout": 0.3,
+  "checkpoint": "checkpoints/improved_patch/best.pt"
+ },
+ "python": "3.9.6",
+ "torch": "2.5.1",
+ "finished": "2026-10-26T19:47:28.682162+00:00"
+}

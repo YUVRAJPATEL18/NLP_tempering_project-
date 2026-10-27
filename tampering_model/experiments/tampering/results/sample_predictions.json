@@ -1,0 +1,254 @@
+{
+ "model": "checkpoints/improved_512_long/best.pt",
+ "test_split_digest": "697c850e9401825e",
+ "note": "sample held-out test predictions, chosen as the lowest / median / highest tampering probability within each true class; thresholds fitted on validation only",
+ "predictions": [
+  {
+   "image": "fin_id_97.jpg",
+   "official_label": "genuine",
+   "quality_group": "good",
+   "manipulation_type": "",
+   "tampered_field": "",
+   "tampering_probability": 0.1113,
+   "quality_score": 0.8332,
+   "decision_gate_on": "NO_TAMPERING_DETECTED",
+   "decision_gate_off": "NO_TAMPERING_DETECTED",
+   "decision_reasons": [
+    "forensic tampering probability 0.111 < 0.417 with usable image quality"
+   ],
+   "predicted_regions": [
+    [
+     0.0,
+     0.2305,
+     0.2227,
+     0.5996
+    ],
+    [
+     0.0,
+     0.0,
+     0.1465,
+     0.2129
+    ],
+    [
+     0.7637,
+     0.4551,
+     0.8809,
+     0.5586
+    ]
+   ],
+   "model_version": "sidtd-resnet18-improved_512_long-e11",
+   "source_size": [
+    931,
+    584
+   ],
+   "overlay_file": "overlay_fin_id_97.png"
+  },
+  {
+   "image": "aze_passport_90.jpg",
+   "official_label": "genuine",
+   "quality_group": "degraded",
+   "manipulation_type": "",
+   "tampered_field": "",
+   "tampering_probability": 0.4222,
+   "quality_score": 0.8124,
+   "decision_gate_on": "MANUAL_REVIEW",
+   "decision_gate_off": "NO_TAMPERING_DETECTED",
+   "decision_reasons": [
+    "forensic evidence is borderline (p=0.422 within [0.417, 0.653)); conflicting/uncertain signals -> review"
+   ],
+   "predicted_regions": [
+    [
+     0.1348,
+     0.584,
+     0.6406,
+     0.9316
+    ],
+    [
+     0.5352,
+     0.0,
+     0.7988,
+     0.1895
+    ]
+   ],
+   "model_version": "sidtd-resnet18-improved_512_long-e11",
+   "source_size": [
+    2167,
+    1525
+   ],
+   "overlay_file": "overlay_aze_passport_90.png"
+  },
+  {
+   "image": "srb_passport_08.jpg",
+   "official_label": "genuine",
+   "quality_group": "good",
+   "manipulation_type": "",
+   "tampered_field": "",
+   "tampering_probability": 0.7154,
+   "quality_score": 0.8602,
+   "decision_gate_on": "POTENTIAL_TAMPERING",
+   "decision_gate_off": "POTENTIAL_TAMPERING",
+   "decision_reasons": [
+    "forensic tampering probability 0.715 >= calibrated threshold 0.653"
+   ],
+   "predicted_regions": [
+    [
+     0.5488,
+     0.2285,
+     1.0,
+     0.832
+    ],
+    [
+     0.0,
+     0.5703,
+     0.1074,
+     0.7871
+    ]
+   ],
+   "model_version": "sidtd-resnet18-improved_512_long-e11",
+   "source_size": [
+    2163,
+    1488
+   ],
+   "overlay_file": "overlay_srb_passport_08.png"
+  },
+  {
+   "image": "aze_passport_17_fake_3_22.jpg",
+   "official_label": "tampered",
+   "quality_group": "good",
+   "manipulation_type": "Inpaint_and_Rewrite",
+   "tampered_field": "mrz_line0",
+   "tampering_probability": 0.3294,
+   "quality_score": 0.8409,
+   "decision_gate_on": "NO_TAMPERING_DETECTED",
+   "decision_gate_off": "NO_TAMPERING_DETECTED",
+   "decision_reasons": [
+    "forensic tampering probability 0.329 < 0.417 with usable image quality"
+   ],
+   "predicted_regions": [
+    [
+     0.3184,
+     0.0,
+     0.8398,
+     0.3047
+    ],
+    [
+     0.3691,
+     0.6582,
+     0.6367,
+     0.7793
+    ],
+    [
+     0.1172,
+     0.6699,
+     0.2383,
+     0.8203
+    ]
+   ],
+   "model_version": "sidtd-resnet18-improved_512_long-e11",
+   "source_size": [
+    2167,
+    1525
+   ],
+   "overlay_file": "overlay_aze_passport_17_fake_3_22.png"
+  },
+  {
+   "image": "alb_id_83_fake_6_54.jpg",
+   "official_label": "tampered",
+   "quality_group": "good",
+   "manipulation_type": "Inpaint_and_Rewrite",
+   "tampered_field": "expiry_date",
+   "tampering_probability": 0.6007,
+   "quality_score": 0.8544,
+   "decision_gate_on": "MANUAL_REVIEW",
+   "decision_gate_off": "NO_TAMPERING_DETECTED",
+   "decision_reasons": [
+    "forensic evidence is borderline (p=0.601 within [0.417, 0.653)); conflicting/uncertain signals -> review"
+   ],
+   "predicted_regions": [
+    [
+     0.7578,
+     0.3535,
+     0.9688,
+     0.6016
+    ],
+    [
+     0.293,
+     0.0312,
+     0.5469,
+     0.2402
+    ],
+    [
+     0.6875,
+     0.7031,
+     1.0,
+     0.916
+    ],
+    [
+     0.0332,
+     0.5293,
+     0.1504,
+     0.7148
+    ],
+    [
+     0.0,
+     0.0684,
+     0.1992,
+     0.1562
+    ]
+   ],
+   "model_version": "sidtd-resnet18-improved_512_long-e11",
+   "source_size": [
+    2167,
+    1360
+   ],
+   "overlay_file": "overlay_alb_id_83_fake_6_54.png"
+  },
+  {
+   "image": "est_id_03_fake_9_36.jpg",
+   "official_label": "tampered",
+   "quality_group": "degraded",
+   "manipulation_type": "Inpaint_and_Rewrite",
+   "tampered_field": "name",
+   "tampering_probability": 0.9209,
+   "quality_score": 0.8096,
+   "decision_gate_on": "MANUAL_REVIEW",
+   "decision_gate_off": "POTENTIAL_TAMPERING",
+   "decision_reasons": [
+    "forensic tampering probability 0.921 >= calibrated threshold 0.653, but the capture is degraded (q=0.810 < 0.825)",
+    "conflicting evidence: image quality lowers the reliability of the forensic signal, so this goes to human review instead of an automatic fraud flag"
+   ],
+   "predicted_regions": [
+    [
+     0.0586,
+     0.0,
+     1.0,
+     1.0
+    ],
+    [
+     0.3242,
+     0.2832,
+     0.5234,
+     0.6133
+    ],
+    [
+     0.0,
+     0.0,
+     0.1992,
+     0.2402
+    ],
+    [
+     0.3516,
+     0.1602,
+     0.5625,
+     0.2793
+    ]
+   ],
+   "model_version": "sidtd-resnet18-improved_512_long-e11",
+   "source_size": [
+    929,
+    580
+   ],
+   "overlay_file": "overlay_est_id_03_fake_9_36.png"
+  }
+ ]
+}

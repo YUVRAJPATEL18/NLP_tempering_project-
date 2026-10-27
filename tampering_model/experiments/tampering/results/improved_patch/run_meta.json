@@ -1,0 +1,53 @@
+{
+ "run_name": "improved_patch",
+ "task": "patch",
+ "seed": 42,
+ "device": "mps",
+ "patch_size": 256,
+ "stride": 192,
+ "batch_size": 16,
+ "epochs_run": 11,
+ "best_epoch": 8,
+ "best_patch_auc": 0.9423,
+ "train_seconds": 774.1,
+ "n_train_patches": 3074,
+ "n_val_patches": 646,
+ "skipped": {
+  "train": {
+   "tampered_without_region_annotation": 19
+  },
+  "val": {
+   "tampered_without_region_annotation": 10
+  }
+ },
+ "temperature": 4.999999999999999,
+ "tamper_high": 0.6605732551589861,
+ "tamper_low": 0.5331630995144991,
+ "val_document_auc": 0.5529,
+ "mean_document_latency_ms": 292.6,
+ "split_digest": "697c850e9401825e",
+ "pos_weight": 2.66388557806913,
+ "run_cfg": {
+  "run_name": "improved_patch",
+  "patch_size": 256,
+  "stride": 192,
+  "freeze_backbone": true,
+  "epochs": 12,
+  "batch_size": 16,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "augment": true,
+  "accum_steps": 1,
+  "early_stop_patience": 3,
+  "genuine_per_image": 2
+ },
+ "model_cfg": {
+  "architecture": "resnet18",
+  "pretrained": true,
+  "dropout": 0.3,
+  "checkpoint": "checkpoints/improved/best.pt"
+ },
+ "python": "3.9.6",
+ "torch": "2.5.1",
+ "finished": "2026-10-26T17:50:54.506628+00:00"
+}

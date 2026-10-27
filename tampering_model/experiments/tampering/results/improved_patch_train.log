@@ -1,0 +1,15 @@
+[patch] device=mps seed=42 patch=256 stride=192
+[patch] train patches=3074 (tampered 839) val patches=646 skipped={'tampered_without_region_annotation': 19} {'tampered_without_region_annotation': 10}
+[improved_patch] epoch 1/12 train_loss=0.8092 val_patch_auc=0.9155 (68.5s)
+[improved_patch] epoch 2/12 train_loss=0.6998 val_patch_auc=0.9173 (66.2s)
+[improved_patch] epoch 3/12 train_loss=0.6776 val_patch_auc=0.9308 (69.9s)
+[improved_patch] epoch 4/12 train_loss=0.6418 val_patch_auc=0.9356 (66.0s)
+[improved_patch] epoch 5/12 train_loss=0.6284 val_patch_auc=0.9349 (69.6s)
+[improved_patch] epoch 6/12 train_loss=0.6681 val_patch_auc=0.9405 (67.7s)
+[improved_patch] epoch 7/12 train_loss=0.6452 val_patch_auc=0.9374 (67.3s)
+[improved_patch] epoch 8/12 train_loss=0.6350 val_patch_auc=0.9423 (71.9s)
+[improved_patch] epoch 9/12 train_loss=0.6264 val_patch_auc=0.9374 (69.1s)
+[improved_patch] epoch 10/12 train_loss=0.6249 val_patch_auc=0.9403 (74.5s)
+[improved_patch] epoch 11/12 train_loss=0.6031 val_patch_auc=0.9404 (82.1s)
+[improved_patch] early stop at epoch 11
+[improved_patch] DONE best_epoch=8 val_doc_auc=0.5529 high=0.661 low=0.533 in 774s -> /Users/yuvrajpatel/Desktop/NLP_Tempering_model/checkpoints/improved_patch/best.pt

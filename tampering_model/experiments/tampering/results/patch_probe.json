@@ -1,0 +1,10 @@
+{
+ "probe": "frozen ImageNet ResNet-18 features + logistic regression on 256px native patches",
+ "split": "val",
+ "n_pos": 170,
+ "n_genuine": 306,
+ "cross_image_patch_auc": 0.9771,
+ "within_image_pair_accuracy": 0.9765,
+ "within_image_score_delta_mean": 0.8079,
+ "note": "cross-image AUC is inflated by the reals/fakes compression difference; within-image accuracy controls for it"
+}

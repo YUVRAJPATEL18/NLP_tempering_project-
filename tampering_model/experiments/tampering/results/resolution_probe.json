@@ -1,0 +1,9 @@
+{
+ "probe": "frozen ImageNet ResNet-18 global-average-pooled features + logistic regression (C=0.05, balanced), square resize to NxN",
+ "split": "val (group-disjoint)",
+ "val_auc_by_input_size": {
+  "256": 0.664,
+  "384": 0.8513,
+  "512": 0.9321
+ }
+}

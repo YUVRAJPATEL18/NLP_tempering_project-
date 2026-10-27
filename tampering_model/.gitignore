@@ -1,0 +1,33 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Datasets & raw images (downloadable via scripts/download_sidtd.py)
+datasets/sidtd/templates/
+datasets/sidtd/templates.zip
+datasets/sidtd/*.parts/
+*.zip
+
+# OS & Workspace files
+.DS_Store
+.freebuff/
+
+# Temporary generated heatmaps in root
+/*.png
+!experiments/**/*.png
+!docs/**/*.png
+
+# Checkpoints (keep active fine-tuned model, ignore experiment variations)
+checkpoints/baseline/
+checkpoints/improved/
+checkpoints/improved_512/
+checkpoints/improved_512_long/
+checkpoints/improved_512_raw/
+checkpoints/improved_patch/

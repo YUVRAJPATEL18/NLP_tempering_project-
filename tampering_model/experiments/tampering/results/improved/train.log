@@ -1,0 +1,14 @@
+[train:improved] device=mps seed=42
+[train] data: 2222 valid images, splits {'train': 1556, 'val': 333, 'test': 333}
+[train] train=1556 (tampered 858), pos_weight=1.0
+[improved] epoch 1/10 train_loss=0.7219 val_loss=0.7102 val_auc=0.497 (70.9s)
+[improved] epoch 2/10 train_loss=0.7119 val_loss=0.6906 val_auc=0.5453 (64.5s)
+[improved] epoch 3/10 train_loss=0.6998 val_loss=0.6941 val_auc=0.545 (86.0s)
+[improved] epoch 4/10 train_loss=0.6928 val_loss=0.6706 val_auc=0.6187 (98.0s)
+[improved] epoch 5/10 train_loss=0.6802 val_loss=0.6864 val_auc=0.5691 (81.5s)
+[improved] epoch 6/10 train_loss=0.6978 val_loss=0.6902 val_auc=0.5856 (75.2s)
+[improved] epoch 7/10 train_loss=0.6826 val_loss=0.6634 val_auc=0.6214 (80.7s)
+[improved] epoch 8/10 train_loss=0.6743 val_loss=0.6527 val_auc=0.6422 (78.9s)
+[improved] epoch 9/10 train_loss=0.6555 val_loss=0.6595 val_auc=0.6453 (76.8s)
+[improved] epoch 10/10 train_loss=0.6531 val_loss=0.6323 val_auc=0.6966 (76.9s)
+[improved] DONE best_epoch=10 val_auc=0.6966 temp=0.83 high=0.751 low=0.312 train_time=791s -> /Users/yuvrajpatel/Desktop/NLP_Tempering_model/checkpoints/improved/best.pt

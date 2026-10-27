@@ -1,0 +1,9 @@
+{
+ "n_tampered_test": 184,
+ "n_with_derived_mask": 181,
+ "n_without_annotation": 3,
+ "cam_threshold": 0.5,
+ "iou_mean": 0.0077,
+ "dice_mean": 0.0146,
+ "note": "masks are DERIVED from official field annotations (src + tampered field); SIDTD provides no official pixel-level tampering masks"
+}

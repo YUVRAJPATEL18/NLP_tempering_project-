@@ -1,0 +1,171 @@
+# IDGuard tampering-detection configuration.
+# All thresholds below were selected on the VALIDATION split only (never the test split).
+# See docs/tampering_model_audit.md and experiments/tampering/results/report.md.
+
+seed: 42
+
+data:
+  root: datasets/sidtd            # produced by scripts/download_sidtd.py
+  manifest: datasets/sidtd/manifest.csv
+  splits_file: datasets/sidtd/splits.json   # produced by scripts/prepare_dataset.py
+  image_size: 256                 # square resize (longer side target 256)
+  split_ratios: [0.70, 0.15, 0.15]
+  split_seed: 42
+  num_workers: 2
+  # ImageNet statistics — required by the pretrained backbone
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+model:
+  architecture: resnet18
+  pretrained: true
+  dropout: 0.3
+  # Production default: the best whole-image model selected on VALIDATION
+  # (val AUC 0.8522, frozen backbone @512 px). The earlier checkpoints
+  # (baseline, improved, improved_512, improved_512_raw, improved_patch) are
+  # kept unchanged so the comparison in experiments/tampering/results stays
+  # reproducible.       
+  checkpoint: checkpoints/kaggle_finetuned/best.pt
+
+# Baseline reference run: frozen backbone + trained linear head (linear probe)
+baseline:
+  run_name: baseline
+  freeze_backbone: true
+  epochs: 6
+  batch_size: 8
+  lr: 1.0e-3          # head only
+  weight_decay: 1.0e-4
+  augment: false      # linear probe, raw resized inputs
+  accum_steps: 1
+  early_stop_patience: 3
+
+# Improved run: full fine-tune with differential learning rates
+improved:
+  run_name: improved
+  freeze_backbone: false
+  epochs: 10
+  batch_size: 8
+  lr: 1.0e-4          # newly-initialized / head layers
+  backbone_lr: 1.0e-5 # pretrained backbone
+  weight_decay: 1.0e-4
+  augment: true       # conservative: ±3 deg rotation, mild brightness/contrast, mild scale/crop
+  accum_steps: 1
+  early_stop_patience: 4
+
+# Improved run #2: identical frozen-backbone recipe to the baseline, but at 512 px.
+# Frozen features separate genuine/tampered documents at val AUC 0.66 (256 px),
+# 0.85 (384 px) and 0.93 (512 px) -- see experiments/tampering/resolution_probe.py.
+# The learning-rate/monitoring recipe is unchanged, so the gain isolates resolution.
+improved_512:
+  run_name: improved_512
+  image_size: 512     # per-run override of data.image_size
+  freeze_backbone: true
+  epochs: 6
+  batch_size: 4
+  lr: 1.0e-3          # head only
+  weight_decay: 1.0e-4
+  augment: true
+  accum_steps: 1
+  early_stop_patience: 2
+
+# Improved run #3: resolution ablation control for improved_512 — identical recipe
+# with augmentation disabled. Isolates whether the mild affine/photometric jitter
+# destroys the fine forensic cues that only survive at 512 px.
+improved_512_raw:
+  run_name: improved_512_raw
+  image_size: 512
+  freeze_backbone: true
+  epochs: 6
+  batch_size: 4
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  augment: false
+  accum_steps: 1
+  early_stop_patience: 2
+
+# Improved run #4: longer head optimisation at 512 px, no augmentation, lower LR.
+# The frozen features reach val AUC 0.93 under a well-converged linear model
+# (experiments/tampering/resolution_probe.py), so the 6-epoch head was the limiter.
+improved_512_long:
+  run_name: improved_512_long
+  image_size: 512
+  freeze_backbone: true
+  epochs: 14
+  batch_size: 4
+  lr: 5.0e-4
+  weight_decay: 1.0e-4
+  augment: false
+  accum_steps: 1
+  early_stop_patience: 3
+
+# Patch-level run: native-resolution tiles. Whole-document 256 px inputs erase
+# rewritten text fields (~2 px tall on a 2167x1360 card); tiling at native
+# resolution keeps them. Backbone stays frozen — resolution, not capacity, was
+# the limiting factor (see docs/tampering_model_audit.md).
+patch:
+  run_name: improved_patch
+  patch_size: 256
+  stride: 192
+  freeze_backbone: true
+  epochs: 12
+  batch_size: 16
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  augment: true       # conservative shift/rotation/brightness jitter on patches
+  accum_steps: 1
+  early_stop_patience: 3
+  genuine_per_image: 2
+
+train:
+  device: auto        # auto | mps | cpu
+  monitor: val_auc    # best-checkpoint metric (validation ROC-AUC)
+  pos_weight: auto    # class imbalance: n_neg / n_pos from the training split
+  amp: false          # MPS fp16 autocast proved unreliable for this model; FP32 is fast enough
+  grad_clip: 1.0
+
+calibration:
+  temperature_scaling: true   # fit on validation logits after training
+
+thresholds:
+  # Decision threshold on the CALIBRATED tampering probability.
+  # Selection rule (run on validation set): largest recall with FPR <= target_fpr_fallback=0.02,
+  # falling back to Youden's J if that constraint is infeasible.
+  target_fpr: 0.02
+  tamper_high: 0.50   # Over 50% => POTENTIAL_TAMPERING
+  tamper_low: 0.20    # Below 20% => NO_TAMPERING_DETECTED (Genuine)
+  enforce_config_thresholds: true
+
+quality:
+  # quality_score in [0,1]; degraded = below `degraded_threshold`.
+  # 0.8251 is the TRAIN-split 33rd percentile of genuine quality scores, computed
+  # once by scripts/prepare_dataset.py and stored in datasets/sidtd/quality_meta.json
+  # (evaluation prefers that file when it exists).
+  degraded_threshold: 0.8251
+  # Absolute floor for "too poor to judge" -> RESCAN_REQUIRED. NOT tuned: SIDTD
+  # templates never fall this low (observed 0.6372-0.9923), so on this dataset the
+  # rescan branch never fires. It is a deployment floor for real captured photos,
+  # which the acquired subset does not contain — do not read it as validated.
+  rescan_below: 0.30
+
+decision:
+  # Four-state decision layer (confidence gate enabled):
+  # NO_TAMPERING_DETECTED | POTENTIAL_TAMPERING | RESCAN_REQUIRED | MANUAL_REVIEW
+  #
+  # The gate consumes three INDEPENDENT signals: tampering_probability, quality_score
+  # and the caller-supplied ocr_reliability. A degraded-but-readable capture
+  # (quality.degraded_threshold) with strong forensic evidence goes to MANUAL_REVIEW
+  # instead of an automatic fraud flag; see experiments/tampering/results/report.md
+  # for the measured effect per test group.
+  gate_enabled: true
+  ocr_min: 0.55       # OCR reliability below this never establishes fraud by itself
+
+heatmap:
+  enabled: true
+  target_layer: layer4
+  cam_threshold: 0.35        # normalized CAM activation for region extraction
+  region_min_area_frac: 0.005
+
+inference:
+  warmup: true
+  return_heatmap: false      # API can request per-call
+  return_regions: true

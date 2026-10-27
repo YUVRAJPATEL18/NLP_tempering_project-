@@ -1,0 +1,4 @@
+[train:improved_512] device=mps seed=42
+[train] data: 2222 valid images, splits {'train': 1556, 'val': 333, 'test': 333}
+[train] train=1556 (tampered 858), pos_weight=1.0
+[improved_512] epoch 1/6 train_loss=0.7234 val_loss=0.6689 val_auc=0.642 (80.2s)

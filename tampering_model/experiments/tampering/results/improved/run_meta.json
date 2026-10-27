@@ -1,0 +1,38 @@
+{
+ "run_name": "improved",
+ "seed": 42,
+ "device": "mps",
+ "batch_size": 8,
+ "epochs_run": 10,
+ "best_epoch": 10,
+ "train_seconds": 790.6,
+ "temperature": 0.8304413913138577,
+ "tamper_high": 0.7510793805122375,
+ "tamper_low": 0.3118088945746422,
+ "split": {
+  "source": "existing",
+  "file": "datasets/sidtd/splits.json"
+ },
+ "pos_weight": 1.0,
+ "run_cfg": {
+  "run_name": "improved",
+  "freeze_backbone": false,
+  "epochs": 10,
+  "batch_size": 8,
+  "lr": 0.0001,
+  "backbone_lr": 1e-05,
+  "weight_decay": 0.0001,
+  "augment": true,
+  "accum_steps": 1,
+  "early_stop_patience": 4
+ },
+ "model_cfg": {
+  "architecture": "resnet18",
+  "pretrained": true,
+  "dropout": 0.3,
+  "checkpoint": "checkpoints/improved/best.pt"
+ },
+ "python": "3.9.6",
+ "torch": "2.5.1",
+ "finished": "2026-10-26T17:33:06.444115+00:00"
+}
