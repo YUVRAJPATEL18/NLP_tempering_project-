@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.pytest-*/
+.venv/
+data/*
+models/*.onnx
+*.egg-info/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+datasets/midv2020_subset/results/*.png
+datasets/midv2020_subset/archive_index.json

@@ -1,0 +1,109 @@
+{
+  "threshold": 0.6,
+  "unique_identities": 6,
+  "groups": {
+    "annotated_portrait_control_scan_upright": {
+      "attempted_requests": 36,
+      "completed_comparisons": 36,
+      "processing_errors": 0,
+      "processing_failure_rate": 0.0,
+      "confusion_matrix": {
+        "true_positive": 6,
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 30
+      },
+      "accuracy_completed_only": 1.0,
+      "balanced_accuracy_completed_only": 1.0,
+      "precision": 1.0,
+      "true_match_rate": 1.0,
+      "false_match_rate": 0.0,
+      "false_non_match_rate": 0.0,
+      "f1": 1.0,
+      "roc_auc_completed_only": 1.0,
+      "genuine_accept_rate_all_attempts": 1.0,
+      "false_match_rate_pairwise_wilson95": [
+        0,
+        0.11351339317396876
+      ],
+      "false_non_match_rate_pairwise_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ],
+      "latency_seconds": {
+        "p50": 0.062,
+        "p95": 0.0814
+      }
+    },
+    "original_card_scan_rotated": {
+      "attempted_requests": 6,
+      "completed_comparisons": 6,
+      "processing_errors": 0,
+      "processing_failure_rate": 0.0,
+      "confusion_matrix": {
+        "true_positive": 6,
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 0
+      },
+      "accuracy_completed_only": 1.0,
+      "balanced_accuracy_completed_only": null,
+      "precision": 1.0,
+      "true_match_rate": 1.0,
+      "false_match_rate": null,
+      "false_non_match_rate": 0.0,
+      "f1": 1.0,
+      "roc_auc_completed_only": null,
+      "genuine_accept_rate_all_attempts": 1.0,
+      "false_match_rate_pairwise_wilson95": null,
+      "false_non_match_rate_pairwise_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ],
+      "latency_seconds": {
+        "p50": 2.45855,
+        "p95": 8.62165
+      }
+    },
+    "original_card_scan_upright": {
+      "attempted_requests": 12,
+      "completed_comparisons": 12,
+      "processing_errors": 0,
+      "processing_failure_rate": 0.0,
+      "confusion_matrix": {
+        "true_positive": 6,
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 6
+      },
+      "accuracy_completed_only": 1.0,
+      "balanced_accuracy_completed_only": 1.0,
+      "precision": 1.0,
+      "true_match_rate": 1.0,
+      "false_match_rate": 0.0,
+      "false_non_match_rate": 0.0,
+      "f1": 1.0,
+      "roc_auc_completed_only": 1.0,
+      "genuine_accept_rate_all_attempts": 1.0,
+      "false_match_rate_pairwise_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ],
+      "false_non_match_rate_pairwise_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ],
+      "latency_seconds": {
+        "p50": 0.4704,
+        "p95": 0.7216049999999998
+      }
+    }
+  },
+  "interpretation": [
+    "Processing errors are excluded from comparison accuracy and reported separately.",
+    "Do not pool full-card and ground-truth-assisted portrait-control results.",
+    "Pairs reuse six identities and are dependent; Wilson intervals are illustrative pairwise intervals, not population guarantees.",
+    "ROC AUC measures ranking, not decision safety at the configured threshold.",
+    "This synthetic six-identity sample cannot establish production accuracy or a safe deployment threshold."
+  ]
+}

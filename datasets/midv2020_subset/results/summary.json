@@ -1,0 +1,54 @@
+{
+  "threshold": 0.6,
+  "model_version": "yunet-2023mar+sface-2021dec",
+  "pipeline_version": "orientation-retry-v2",
+  "identity_count": 6,
+  "planned_pairs": 54,
+  "successful_responses": 54,
+  "failed_requests": 0,
+  "enrollment_failures": 0,
+  "model_sha256": {
+    "face_detection_yunet_2023mar.onnx": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+    "face_recognition_sface_2021dec.onnx": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+  },
+  "original_card_scan_upright": {
+    "genuine_pairs": 6,
+    "genuine_accepted": 6,
+    "genuine_rejected": 0,
+    "genuine_processing_errors": 0,
+    "impostor_pairs": 6,
+    "false_matches": 0,
+    "impostor_rejected": 6,
+    "impostor_processing_errors": 0
+  },
+  "original_card_scan_rotated": {
+    "genuine_pairs": 6,
+    "genuine_accepted": 6,
+    "genuine_rejected": 0,
+    "genuine_processing_errors": 0,
+    "impostor_pairs": 0,
+    "false_matches": 0,
+    "impostor_rejected": 0,
+    "impostor_processing_errors": 0
+  },
+  "annotated_portrait_control_scan_upright": {
+    "genuine_pairs": 6,
+    "genuine_accepted": 6,
+    "genuine_rejected": 0,
+    "genuine_processing_errors": 0,
+    "impostor_pairs": 30,
+    "false_matches": 0,
+    "impostor_rejected": 30,
+    "impostor_processing_errors": 0
+  },
+  "limitations": [
+    "Six artificial identities from a community mirror; not a biometric accuracy certification.",
+    "Matching labels derive from document type plus filename, not the endpoint predictions.",
+    "References are ground-truth-annotated portrait crops from templates; scans are different source files.",
+    "Annotated portrait control uses ground-truth crop coordinates and does not establish full-card extraction success.",
+    "Processing errors are reported separately and must not be counted as correct mismatches.",
+    "HTTP requests use FastAPI TestClient with actual models and SQLite; no external network server.",
+    "Threshold fixed during this run; these identities were reused during development, so this is not held-out validation.",
+    "No removal of failed samples; original-card mode uses unmodified downloads."
+  ]
+}

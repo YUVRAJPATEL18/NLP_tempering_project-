@@ -1,0 +1,152 @@
+{
+  "source": "https://huggingface.co/datasets/AmAFakePerson123/TrialforGeneratedIDs/resolve/c1da4db/dataset.zip",
+  "publisher": "Community mirror; provenance not independently authenticated",
+  "license_declared_by_mirror": "cc-by-sa-3.0",
+  "files": [
+    {
+      "source_member": "dataset/templates/images/alb_id/00.jpg",
+      "file": "dataset__templates__images__alb_id__00.jpg",
+      "bytes": 1859173,
+      "sha256": "cba4c2bd4a3f74327845a6e0c209b9a947344a5b64181147678e6e4c15aa985f"
+    },
+    {
+      "source_member": "dataset/scan_rotated/images/alb_id/00.jpg",
+      "file": "dataset__scan_rotated__images__alb_id__00.jpg",
+      "bytes": 955580,
+      "sha256": "03fda82f27ed1b2ac692508abef17672a4865c9e806c9b308db27c23cc2a6ff9"
+    },
+    {
+      "source_member": "dataset/scan_upright/images/alb_id/00.jpg",
+      "file": "dataset__scan_upright__images__alb_id__00.jpg",
+      "bytes": 1190677,
+      "sha256": "4b2e86c2ea6e396c5a4ee350db8649fb747f9ccb38269f6240e8112d670f347a"
+    },
+    {
+      "source_member": "dataset/scan_rotated/images/alb_id/01.jpg",
+      "file": "dataset__scan_rotated__images__alb_id__01.jpg",
+      "bytes": 890230,
+      "sha256": "13a00da4a8b3933801b04edc78747d2544222f6c41d5122cbbd5e1697dcd7a5d"
+    },
+    {
+      "source_member": "dataset/scan_upright/images/alb_id/01.jpg",
+      "file": "dataset__scan_upright__images__alb_id__01.jpg",
+      "bytes": 1218066,
+      "sha256": "090143c580dfbe80b65e4cca22870a9c3c8a2c4f8dd1d93fcd425e05ad0e9897"
+    },
+    {
+      "source_member": "dataset/templates/images/alb_id/01.jpg",
+      "file": "dataset__templates__images__alb_id__01.jpg",
+      "bytes": 1890024,
+      "sha256": "a2094012fa88fbc463b06fe1fa773a0a66103044dfc2fa51db3d342d2548300c"
+    },
+    {
+      "source_member": "dataset/templates/images/fin_id/00.jpg",
+      "file": "dataset__templates__images__fin_id__00.jpg",
+      "bytes": 388367,
+      "sha256": "d21264c82008d8b9bfc4d2da9d9985b2149562883f0133c0568f3d91241df664"
+    },
+    {
+      "source_member": "dataset/scan_rotated/images/alb_id/02.jpg",
+      "file": "dataset__scan_rotated__images__alb_id__02.jpg",
+      "bytes": 931105,
+      "sha256": "25c12874ac0708fb441d6d4fa86b654191734b659b8571aa40e2c8d7d3878442"
+    },
+    {
+      "source_member": "dataset/scan_upright/images/alb_id/02.jpg",
+      "file": "dataset__scan_upright__images__alb_id__02.jpg",
+      "bytes": 1200045,
+      "sha256": "0e3249d0b0528d0bae92903e8a6818190e45ef13feb277053877ac175b4c4cf5"
+    },
+    {
+      "source_member": "dataset/templates/images/alb_id/02.jpg",
+      "file": "dataset__templates__images__alb_id__02.jpg",
+      "bytes": 1866641,
+      "sha256": "bb344cc5f982f9c60465b4caa912e3e4582e3315434438061011ae86049dad18"
+    },
+    {
+      "source_member": "dataset/templates/images/fin_id/01.jpg",
+      "file": "dataset__templates__images__fin_id__01.jpg",
+      "bytes": 389051,
+      "sha256": "2513a717e38a3cfdb0fde9a9c567bc7fe710958e1737d1ff801d49fd6508caf3"
+    },
+    {
+      "source_member": "dataset/scan_upright/images/fin_id/00.jpg",
+      "file": "dataset__scan_upright__images__fin_id__00.jpg",
+      "bytes": 907168,
+      "sha256": "b062ba03d0962b54f045ebc0710d8c0ec4c5dee95540422bcbd2ef273bc46788"
+    },
+    {
+      "source_member": "dataset/scan_rotated/images/fin_id/00.jpg",
+      "file": "dataset__scan_rotated__images__fin_id__00.jpg",
+      "bytes": 1008673,
+      "sha256": "f4ed14ac15550cba575a96b665844b6da96070b8ba49071afce732d829a23a60"
+    },
+    {
+      "source_member": "dataset/scan_upright/images/fin_id/01.jpg",
+      "file": "dataset__scan_upright__images__fin_id__01.jpg",
+      "bytes": 944608,
+      "sha256": "76e6bd484561fdc6257d80c10c657c778eee7e9a1dc071eb6f9847822b186ab1"
+    },
+    {
+      "source_member": "dataset/templates/images/fin_id/02.jpg",
+      "file": "dataset__templates__images__fin_id__02.jpg",
+      "bytes": 380943,
+      "sha256": "59f65962848d5c0505243196bb83b7d741feef1daae0446614ec075e7a707a8c"
+    },
+    {
+      "source_member": "dataset/scan_rotated/images/fin_id/01.jpg",
+      "file": "dataset__scan_rotated__images__fin_id__01.jpg",
+      "bytes": 1027746,
+      "sha256": "397329d5845c1e7ace61bb6ff7893ead9248c60b4a13a856d3615bd209b00660"
+    },
+    {
+      "source_member": "dataset/scan_rotated/images/fin_id/02.jpg",
+      "file": "dataset__scan_rotated__images__fin_id__02.jpg",
+      "bytes": 979942,
+      "sha256": "bad93f906a85624ea502b5fa9b4db467d58c42b7d1586fa94c41e8ee8eed17ad"
+    },
+    {
+      "source_member": "dataset/templates/annotations/alb_id.json",
+      "file": "dataset__templates__annotations__alb_id.json",
+      "bytes": 325536,
+      "sha256": "8173d4b0c2845e40e4c100d3011192924b74cec7858969cb116973be9f67d1c9"
+    },
+    {
+      "source_member": "dataset/scan_upright/images/fin_id/02.jpg",
+      "file": "dataset__scan_upright__images__fin_id__02.jpg",
+      "bytes": 896249,
+      "sha256": "af9e2fd33228494a52b30add4098a2cedc78b6b2e8ff4f03f73fabc424d76716"
+    },
+    {
+      "source_member": "dataset/scan_upright/annotations/alb_id.json",
+      "file": "dataset__scan_upright__annotations__alb_id.json",
+      "bytes": 63013,
+      "sha256": "d73c6805f23c5e6a9d676789469da5445d881c7bce3b65230f44e8dcee6f615d"
+    },
+    {
+      "source_member": "dataset/scan_rotated/annotations/alb_id.json",
+      "file": "dataset__scan_rotated__annotations__alb_id.json",
+      "bytes": 62939,
+      "sha256": "19ca5e5fe983d3fdb2a7ea492f323031460210abb0ed24f5bdb131e824429c89"
+    },
+    {
+      "source_member": "dataset/templates/annotations/fin_id.json",
+      "file": "dataset__templates__annotations__fin_id.json",
+      "bytes": 317364,
+      "sha256": "8097df809619ea9f849df0715bb8123af75390ec9197e0abd49d61417bdbc967"
+    },
+    {
+      "source_member": "dataset/scan_upright/annotations/fin_id.json",
+      "file": "dataset__scan_upright__annotations__fin_id.json",
+      "bytes": 62889,
+      "sha256": "734271198ac01b6ad5022e6b6ec78ca3974971ae6ef98375bb78fd59a44ebce6"
+    },
+    {
+      "source_member": "dataset/scan_rotated/annotations/fin_id.json",
+      "file": "dataset__scan_rotated__annotations__fin_id.json",
+      "bytes": 64284,
+      "sha256": "1f96448dc77cef77d6503db93f9a205a56d14b0aad57809f5b59c4ebbd9d79bb"
+    }
+  ],
+  "transferred_bytes": 13603305
+}

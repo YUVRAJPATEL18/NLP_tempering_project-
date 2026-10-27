@@ -1,0 +1,62 @@
+[
+  {
+    "identity": "alb_id:00",
+    "status": "ok",
+    "bbox": [
+      110,
+      153,
+      416,
+      566
+    ]
+  },
+  {
+    "identity": "alb_id:01",
+    "status": "ok",
+    "bbox": [
+      113,
+      161,
+      411,
+      567
+    ]
+  },
+  {
+    "identity": "alb_id:02",
+    "status": "ok",
+    "bbox": [
+      93,
+      161,
+      396,
+      585
+    ]
+  },
+  {
+    "identity": "fin_id:00",
+    "status": "ok",
+    "bbox": [
+      41,
+      75,
+      192,
+      297
+    ]
+  },
+  {
+    "identity": "fin_id:01",
+    "status": "ok",
+    "bbox": [
+      58,
+      79,
+      222,
+      308
+    ]
+  },
+  {
+    "identity": "fin_id:02",
+    "status": "ok",
+    "bbox": [
+      55,
+      78,
+      207,
+      296
+    ]
+  }
+]
